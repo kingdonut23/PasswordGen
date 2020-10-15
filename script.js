@@ -23,7 +23,7 @@ function generatePassword() {
 
   // set the messages the user would see and the responses they would get
   var passwordLength = prompt("How long would you like your password to be?");
-  alert("You want your password to be " + passwordLength, "characters")
+  alert("The number of characters you'd like this password to be: " +passwordLength)
   var passwordSpecial = confirm("Would you like your password to contain special characters? Okay for 'YES' Cancel of 'No'"); {
     if (passwordSpecial === true) {
       alert("You want the password to have special characters");
