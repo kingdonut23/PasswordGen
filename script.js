@@ -17,15 +17,33 @@ function writePassword() {
 
   passwordText.value = password;
 
-  writePassword()
 }
 
 function generatePassword() {
   var passwordLength = prompt("How long would you like your password to be?");
-  var passwordSpecial = confirm("Would you like your password to contain special characters? Okay for 'YES' Cancel of 'No'");
-  var passwordcase = confirm("Would you like the password to have capital letter? Okay for 'YES' Cancel of 'No'")
+  alert("You want your password to be " + passwordLength, "characters")
+  var passwordSpecial = confirm("Would you like your password to contain special characters? Okay for 'YES' Cancel of 'No'"); {
+    if (passwordSpecial === true) {
+      alert("You want the password to have special characters");
+    }
+    else if (passwordSpecial === false) {
+      alert("You want the password to not have special characters");
+    }
+  }
+  var passwordCase = confirm("Would you like the password to have Uppercase letters? Okay for 'YES' Cancel of 'No'"); {
+    if (passwordCase === true) {
+      alert("You want the password to have Uppercase letters");
+    }
+    else if (passwordCase === false) {
+      alert("You want the password to not have Uppercase letters");
+    }
+    console.log("Password length: " +passwordLength);
+    console.log("Special characters: " +passwordSpecial);
+    console.log("Uppercase letters: " +passwordCase);
 
-  if (passwordSpecial === true && passwordcase === true) {
+  }
+
+  if (passwordSpecial === true && passwordCase === true) {
     var length = passwordLength,
       charset = charsetalt2
     passwordText = "";
@@ -35,7 +53,7 @@ function generatePassword() {
     }
     return passwordText;
   }
-  else if (passwordSpecial === false && passwordcase === true) {
+  else if (passwordSpecial === false && passwordCase === true) {
     var length = passwordLength,
       charset = charset1
     passwordText = "";
@@ -45,7 +63,7 @@ function generatePassword() {
     }
     return passwordText;
   }
-  else if (passwordSpecial === false && passwordcase === false) {
+  else if (passwordSpecial === false && passwordCase === false) {
     var length = passwordLength,
       charset = charsetalt
     passwordText = "";
@@ -54,7 +72,7 @@ function generatePassword() {
     }
     return passwordText;
   }
-  else if (passwordSpecial === true && passwordcase === false) {
+  else if (passwordSpecial === true && passwordCase === false) {
     var length = passwordLength,
       charset = charsetalt3
     passwordText = "";
@@ -64,7 +82,7 @@ function generatePassword() {
     return passwordText;
   }
 }
-generatePassword()
+
 
 
 // Add event listener to generate button
